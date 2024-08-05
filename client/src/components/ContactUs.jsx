@@ -1,6 +1,36 @@
-import React from 'react'
+import { useState } from 'react';
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function ContactUs() {
+
+    const navigate = useNavigate();
+  const [feedbackData, setfeedbackData] = useState()
+
+  const Changefeedback = (e) => {
+    e.preventDefault()
+    setfeedbackData({ ...feedbackData, [e.target.name]: e.target.value })
+    console.log(feedbackData)
+  }
+
+
+
+  const feedbackDataBase = async (e) => {
+    e.preventDefault()
+    try {
+
+      const url = 'http://localhost:5000/createfeedback';
+
+      const user = await axios.post(url, feedbackData)
+      if (user.status === false) window.alert("invalid data")
+      else { 
+    window.alert("Thank for your Feedback")
+    navigate('/') }
+    }
+    catch (err) { window.alert(err.response.data.message) }
+   
+  }
+
     return (
         <div className='flex flex-col w-full h-[350px] justify-evenly items-center'>
 
@@ -48,25 +78,25 @@ function ContactUs() {
                             <form className='flex flex-col gap-5' action="">
                                 <div className='flex flex-col gap-2'>
                                 <label htmlFor="form name">Your Name</label>
-                                <input type="text" name="name" id="name" placeholder='Enter Your Name'
+                                <input onChange={Changefeedback} type="text" name="name" id="name" placeholder='Enter Your Name'
                                     className='border-none ring-1 ring-gray-300 w-full rounded-md px-4 py-2  focus:ring-4 focus:ring-teal-600'/>
                                 </div>
 
                                 <div className='flex flex-col gap-2'>
                                 <label htmlFor="form name">Email Address</label>
-                                <input type="text" name="name" id="name" placeholder='Enter Your Address'
+                                <input onChange={Changefeedback} type="text" name="email" id="name" placeholder='Enter Your Address'
                                     className='border-none ring-1 ring-gray-300 w-full rounded-md px-4 py-2  focus:ring-4 focus:ring-teal-700'
                                 />
                                 </div>
 
                                 <div className='flex flex-col gap-2'>
                                 <label htmlFor="form name">Message</label>
-                                <textarea rows={4} type="text" name="name" id="name" placeholder='Write the message'
+                                <textarea onChange={Changefeedback} rows={4} type="text" name="message" id="name" placeholder='Write the message'
                                     className='border-none ring-1 ring-gray-300 w-full rounded-md px-4 py-2  focus:ring-4 focus:ring-teal-500'
                                 />
                                 </div>
 
-                                <button className='inline-block self-end bg-cyan-700 text-white font-bold rounded-lg px-6 py-2 uppercase'>Send Message</button>
+                                <button onClick={feedbackDataBase} className='inline-block self-end bg-cyan-700 text-white font-bold rounded-lg px-6 py-2 uppercase'>Send Message</button>
                             </form>
                         </div>
                 </div>

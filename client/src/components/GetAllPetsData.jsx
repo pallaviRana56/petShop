@@ -34,7 +34,7 @@ function GetAllPetsData() {
 
 
     return (
-        <div className='min-h-screen flex flex-col justify-center items-center lg:pmx-[100px] px-5 mb-10 '>
+        <div className='min-h-screen flex flex-col justify-center items-center lg:mx-[20px] px-5 mb-10 '>
         <h1 className='text-2xl font-semibold text-center pt-2 pb-10'>Product</h1>
         <div className='flex flex-wrap gap-10 justify-center'>
 

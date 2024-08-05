@@ -1,9 +1,9 @@
 import React from 'react';
 import Banner from './Banner';
 import GetAllPetsData from './GetAllPetsData'
-import OurServices from './OurServices';
-import About from './About';
-import Contact from './Contact'
+// import OurServices from './OurServices';
+// import About from './About';
+// import Contact from './Contact'
 import Footer from './Footer'
 
 
@@ -14,9 +14,9 @@ function Home() {
     
       <Banner/>
       <GetAllPetsData/>
-      <OurServices/>
+      {/* <OurServices/>
       <About/>
-      <Contact/>
+      <Contact/> */}
       <Footer/>
       
 

@@ -9,6 +9,7 @@ function ViewDeatails() {
     const navigate = useNavigate();
 
     const [value, setvalue] = useState(null);
+   
 
     useEffect(() => {
 
@@ -24,6 +25,7 @@ function ViewDeatails() {
                     }
                 })
                 setvalue(pets.data.msg)
+                
                 if (pets.status === false) window.alert("invalid data")
                     
                 }
@@ -36,22 +38,16 @@ function ViewDeatails() {
 
     if (!value || !value[0]) return <div>No data found</div>;
 
-
-    
-const deleteData = async(e)=>{
-    
     
 
+    const deleteData = async(e)=>{
+        
     e.preventDefault()
     try {
 
        let userid = sessionStorage.getItem('UserId');
        
-
-       console.log(userid,id)
-      const url = `http://localhost:5000/pets/${userid}/${id}`;
-
-      console.log(`http://localhost:5000/pets/${id}`)
+      const url = `http://localhost:5000/pets/${userid}/${id}`; 
 
       const user = await axios.delete(url,{
         headers: {

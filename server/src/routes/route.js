@@ -3,6 +3,7 @@ const router = express.Router()
 const { createUser, getAllUserData, login } = require('../controller/userController');
 const { authenticate,authorize } = require('../middleware/auth.js');
 const { createpets, getAllpets, getpetsData, deleteBlog } = require('../controller/petsController.js');
+const {createfeedback} = require('../controller/feedbackController.js')
 
 //<-------------This API used for Create User-------------------------------------------->//
 router.post('/createUser', createUser);
@@ -20,6 +21,8 @@ router.get("/pets/:getPetsId", authenticate, getpetsData);
 // router.put("/pets/:petsId", authorize, updateBlog);
 //<--------------u--These APIs used for Deleting Blogs---------------------------------->//
 router.delete("/pets/:userId/:petId",authorize, deleteBlog);
+
+router.post('/createfeedback', createfeedback);
 
 
 
