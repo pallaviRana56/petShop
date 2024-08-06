@@ -18,10 +18,9 @@ function Contact() {
 
       
       <ContactUs/>
+
+
       
-
-  
-
     </div>
   )
 }

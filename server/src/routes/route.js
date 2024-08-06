@@ -4,6 +4,7 @@ const { createUser, getAllUserData, login } = require('../controller/userControl
 const { authenticate,authorize } = require('../middleware/auth.js');
 const { createpets, getAllpets, getpetsData, deleteBlog } = require('../controller/petsController.js');
 const {createfeedback} = require('../controller/feedbackController.js')
+const {createAdmin, Adminlogin} =require('../controller/adminController.js')
 
 //<-------------This API used for Create User-------------------------------------------->//
 router.post('/createUser', createUser);
@@ -23,8 +24,8 @@ router.get("/pets/:getPetsId", authenticate, getpetsData);
 router.delete("/pets/:userId/:petId",authorize, deleteBlog);
 
 router.post('/createfeedback', createfeedback);
-
-
+router.post('/createAdmin', createAdmin);
+router.post('/adminLogin', Adminlogin);
 
 router.all("/*", (req, res) => {
     res.status(400).send({ status: false, message: "Url is not Correct" })

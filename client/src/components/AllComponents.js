@@ -8,3 +8,4 @@ export { default as SignUp} from './SignUp';
 export { default as Categories} from './Categories';
 export { default as ViewDeatails} from './ViewDeatails';
 export { default as Footer} from './Footer';
+export { default as AdminLog} from './AdminLog';

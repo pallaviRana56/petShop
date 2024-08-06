@@ -4,7 +4,6 @@ import logo from '../images/logo.png';
 
 
 
-
 function Navbar() {
 
 
@@ -42,10 +41,10 @@ function Navbar() {
             <li className='hover:text-black'><Link to="/About">About</Link></li>
             <li className='hover:text-black'><Link to="/Contact">Contact</Link></li>
             <li className='hover:text-black'><Link to="/Categories">Categories</Link></li>
-            
-            </ul>
 
-           {/* <div>
+          </ul>
+
+          {/* <div>
             <Link to ="/Categories">Categories</Link>
            
            <select className='p-2' name="pets" id="pets">
@@ -54,7 +53,7 @@ function Navbar() {
             <option value="bird">Bird</option>
            </select>
            </div> */}
-            
+
 
           <div className='flex flex-col items-center gap-6 lg:flex-row lg:gap-8'>
             <Link to="/SignUp"> <button className='rounded-full h-10 w-[90px] 

@@ -73,13 +73,13 @@ function ViewDeatails() {
         </div>
 
         <div className='flex flex-col  items-center max-w-[800px] md:w-full'>
-        <div className='flex flex-row gap-3 ml-[600px]'>
+        {/* <div className='flex flex-row gap-3 ml-[600px]'>
             <i class="fas fa-edit text-blue-300 text-4xl hover:scale-110 duration-300"></i>
             <button onClick={deleteData}> 
 
             <i  class="fa-solid fa-trash text-red-500 text-4xl hover:scale-110 duration-300"/>
             </button>
-            </div>
+            </div> */}
         <h1 className=' font-bold text-6xl'>{value[0].title}</h1>
         <h2 className=' pt-[20px] px-[55px]'>{value[0].description}</h2>
             <h1 className='font-semibold text-xl pt-[20px]'>Main Info</h1>

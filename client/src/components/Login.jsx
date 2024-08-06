@@ -24,6 +24,11 @@ function SignUp({isUserAuth}) {
 
 
 
+  const AdminLogIn = async(e)=>{
+    e.preventDefault()
+    navigate('/AdminLog')
+  }
+
   const SignUpDataBase = async (e) => {
     e.preventDefault()
     try {
@@ -68,6 +73,14 @@ function SignUp({isUserAuth}) {
             <button onClick={SignUpDataBase} className='bg-[#1e376e] mt-3 rounded-xl text-white py-2 hover:scale-110 transform duration-300'>
               Login
             </button>
+
+
+            <button onClick={AdminLogIn} className='bg-[#1e376e] mt-3 rounded-xl text-white py-2 hover:scale-110 transform duration-300'>
+              Admin Log-In 
+            </button>
+
+            
+           
 
           </form>
 

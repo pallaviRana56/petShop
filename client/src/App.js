@@ -1,5 +1,5 @@
 import {BrowserRouter,Routes,Route,Navigate,Outlet} from 'react-router-dom';
-import {Navbar,Home,About,Contact,SignUp,Login,OurServices,Categories, ViewDeatails} from './components/AllComponents'
+import {Navbar,Home,About,Contact,SignUp,Login,OurServices,Categories, ViewDeatails, AdminLog} from './components/AllComponents'
 import { useState } from 'react';
 
 function App() {
@@ -16,6 +16,8 @@ function App() {
     
     <Routes>
       <Route path='/SignUp' element={<SignUp/>}/>
+      {/* <Route path='/AdminLog' element={<AdminLog/>}/> */}
+      <Route path='/AdminLog' element={<AdminLog isUserAuth={isUserAuth}/>}/>
       <Route path='/Login' element={<Login isUserAuth={isUserAuth}/>}/>
       <Route path='/*' element={<h1>Page not Found</h1>}/>
 
